@@ -1,0 +1,46 @@
+{
+  "investment" : [
+    { "name" : "total_cost_of_dat_purchase"                , "column" : "S"  , "function" : "=(M3*R3)+(O3*K3*12*L3)+(N3*K3)" } ,
+    { "name" : "depreciation"                              , "column" : "P"  , "function" : "=0 if (S3<500) else (S3/L3)" } ,
+    { "name" : "maintenance_costs"                         , "column" : "Q"  , "function" : "=S3*(4/100)" } 
+  ],
+  "milk_yield" : [
+    { "name" : "price_of_yield"                            , "column" : "W"  , "function" : "=U3*V3*K3*365" } , 
+    { "name" : "price_of_increased_yield"                  , "column" : "X"  , "function" : "=W3*(1+(T3/100))" } , 
+    { "name" : "increased_revenuein_1_year"                , "column" : "Y"  , "function" : "=X3-W3" } 
+  ],
+  "labor_cost" : [
+    { "name" : "labor_cost_savings"                        , "column" : "AB"  , "function" : "=AA3-(AA3*(1-(Z3/100)))" } 
+  ],
+  "energy_cost" : [
+    { "name" : "current_energy_cost"                       , "column" : "AF" , "function" : "=AD3*AE3" } , 
+    { "name" : "energy_cost_savings"                       , "column" : "AG" , "function" : "=AF3-(AF3*(1-(AC3/100)))" } 
+  ],
+  "water_usage" : [
+    { "name" : "water_cost_saving"                         , "column" : "AJ" , "function" : "=AI3-(AI3*(1-(AH3/100)))" } 
+  ],
+  "profit_per_animal" : [
+    { "name" : "profit_per_animal"                         , "column" : "AL" , "function" : "=AK3*K3" } 
+  ],
+  "feed_cost" : [
+    { "name" : "feed_cost"                                 , "column" : "AO" , "function" : "=AN3-(AN3*(1-(AM3/100)))" } 
+  ],
+  "feed_waste" : [
+    { "name" : "feed_waste"                                , "column" : "AR" , "function" : "=AQ3-(AQ3*(1-(AP3/100)))" } 
+  ],
+  "antibiotics_cost" : [
+    { "name" : "antibiotics_cost_saving"                   , "column" : "AU" , "function" : "=AT3-(AT3*(1-(AS3/100)))" } 
+  ],
+  "mortality_cost" : [
+    { "name" : "mortality_cost_saving"                     , "column" : "AX" , "function" : "=AW3-(AW3*(1-(AV3/100)))" } 
+  ],
+  "profitability_increase" : [
+    { "name" : "profitability_increase"                    , "column" : "BA" , "function" : "=AZ3-(AZ3*(1-(AY3/100)))" } 
+  ],
+  "totals" : [
+    { "name" : "annual_change_in_net_income"               , "column" : "BB" , "function" : "=(Y3+AB3+AG3+AJ3+AL3+AO3+AR3+AU3+AX3+BA3)-P3-Q3"  } ,
+    { "name" : "return_on_investment_roi"                  , "column" : "BC" , "function" : "=(BB3/S3)*100 if (S3>0) else 0"  } ,
+    { "name" : "payback_period"                            , "column" : "BD" , "function" : "=(S3/BB3)" } ,
+    { "name" : "is_the_dat_beneficial"                     , "column" : "BE" , "function" : "=1 if ( 0<BD3<6 ) else -1" }
+  ]
+}

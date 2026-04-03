@@ -1,0 +1,144 @@
+{
+  "Farm Management Information Systems (FMIS) and applications (inc. Decision Support Systems (DSS). Quality Management Systems (QMS))": {
+    "Irrigation-DSS": [
+      "plantae manager",
+      "zen-irriware",
+      "zen agro",
+      "irrigation pro",
+      "cropx app "
+    ],
+    "Multipurpose - DSS/ FMIS": [
+      "agritask dss",
+      "hawkeye"
+    ],
+    "Multipurpose- DSS/FMIS": [
+      "vegsyst decision support system (vegsyst-dss)"
+    ],
+    "Monitoring- FMIS": [
+      "x growing support systems",
+      "wisecrop",
+      "nmp online ",
+      "eos crop monitoring",
+      "my irrigation "
+    ],
+    "Monitoring-FMIS ": [
+      "truas trueagriculturalsensing"
+    ],
+    "Monitoring-FMIS": [
+      "ifarma",
+      "navfarm",
+      "granular",
+      "incommand 800",
+      "incommand 1200",
+      "evineyard management software "
+    ],
+    "Multipurpose-FMIS": [
+      "trimble ag software"
+    ]
+  },
+  "Guidance / Controlled Traffic Farming (CTF) technologies": {
+    "Autosteering": [
+      "fjd at1 autosteering kit",
+      "sveaverken f100 auto steer system",
+      "fieldbee gps tractor system",
+      "agribus straight assistance package",
+      "gfx-750. nav-900. ez-pilot pro. rtk",
+      "ez-steer with gfx-350",
+      "ez-steer with gfx-750",
+      "outback rebel row-crop",
+      "trimble autopilot",
+      "john deere autotrac"
+    ],
+    "GPS Guidance System": [
+      "jy100 tractor gnss guidance system",
+      "autotrac controller"
+    ],
+    "Autosteering-FMIS ": [
+      "agribus-gminir"
+    ],
+    "GPS": [
+      "tractor implement automation",
+      "trimple gfx 1060 + nav 500"
+    ],
+    "Autosteering - VRA seed and fertilizer ": [
+      "system 350 with x30 control console"
+    ]
+  },
+  "Reacting or Variable Rate Technologies (VRT)": {
+    "Management Zones & VRA Maps": [
+      "management zones & vra maps"
+    ],
+    "fertilization": [
+      "m42 isobus section control 2.0"
+    ],
+    "irrigation ": [
+      "ugmo soil moisture sensor system"
+    ],
+    "spraying": [
+      "geoline cs260 sprayer control system",
+      "geosystem 240 cs + gps"
+    ],
+    "planting and fertilization": [
+      "seedstar xp system"
+    ],
+    "pesticide application": [
+      "optispray"
+    ],
+    "pesticide and fertilizer application": [
+      "exactapply"
+    ],
+    "seed and fertilizer application": [
+      "\"\"\"x30\"\" platform\""
+    ]
+  },
+  "Recording or Mapping technologies (inc. monitoring systems. real-time location systems (RTLS))": {
+    "Monitoring": [
+      "altum-pt",
+      "rededge-p",
+      "autel robotics evo ii drone - 8k camera drone",
+      "efarmer",
+      "dji phantom 4 multispectral drone",
+      "single depth sensor",
+      "multi depth sensor",
+      "dragino lsph01 soil temperature and ph sensor"
+    ],
+    "Mapping": [
+      "toro precision soil moisture sensor",
+      "a631 rtk base station",
+      "farmtrx yield mapping kit"
+    ],
+    "Monitoring ": [
+      "ebee ag drone"
+    ]
+  },
+  "Robotic Systems or Smart Machines (inc. Artificial Intelligence (AI))": {
+    "weeding": [
+      "handheld – rootwave pro",
+      "horticulture – fruit",
+      "agriculture – row crops (tractor mounted)",
+      "lightweight autonomous robots initially for weeding",
+      "oz field robot"
+    ],
+    "pruning": [
+      "wall-ye 1000 mobile pruning robot"
+    ],
+    "harvesting": [
+      "agrobot sw6010",
+      "white shark dgf80",
+      "white shark ws 332-86 rc"
+    ],
+    "Weeding and thinning": [
+      "robovator"
+    ],
+    "spraying": [
+      "xag r150",
+      "rometron weed-it"
+    ],
+    "connection": [
+      "iso bus control"
+    ],
+    "multipurpose": [
+      "robotti 150d"
+    ]
+  }
+}

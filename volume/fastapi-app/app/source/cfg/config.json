@@ -1,0 +1,38 @@
+{
+ "service" : {
+  "endpoint"    : "127.0.0.1:8686",
+  "title"       : "Cost Benefit Calculator V1",
+  "description" : "Cost Benefit Calculator V1",
+  "version"     : "1.0.0",
+  "docs_url"    : "documentation"
+ },
+ "settings" : {
+   "debug" : true
+ },
+ "logs" : {
+  "path" : "../resources/logs/"
+ },
+ "database" : {
+   "connection" : {
+    "user"     : "postgres",
+    "password" : "mysecretpassword",
+    "host"     : "quantifarm-cost-benefit-calculator-v1-tool-postgresql",
+    "port"     : "5432",
+    "database" : "postgres"
+   },
+   "schema"     : "ws_cost_benefit_calculator",
+   "authschema" : "ws_cost_benefit_calculator"
+ },
+ "uploads" : {
+  "tmp" : {
+   "path" : "../resources/uploads/"
+  },
+  "images" : {
+   "path"         : "../resources/uploads/",
+   "service_name" : "uploads"
+  }
+ },
+ "exports" : {
+   "path" : "../resources/exports/"
+ }
+}

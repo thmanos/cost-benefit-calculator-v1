@@ -1,0 +1,2838 @@
+{
+    "openapi": "3.0.2",
+    "info": {
+        "title": "Cost Benefit Calculator",
+        "description": "Cost Benefit Calculator",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/administration/create_db_tables": {
+            "get": {
+                "tags": [
+                    "Administration"
+                ],
+                "summary": "Create basic Database Tables",
+                "description": "Create the initial tables required for inserting user Data. This is an action that only needs to be performed once at the initial installation",
+                "operationId": "createDBTables_administration_create_db_tables_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/administration/create_input_models": {
+            "get": {
+                "tags": [
+                    "Administration"
+                ],
+                "summary": "Create our Input BaseModels",
+                "description": "Create our Input BaseModels",
+                "operationId": "createInputModels_administration_create_input_models_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dat": {
+            "get": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Retrieve Item",
+                "description": "Retrieve Item",
+                "operationId": "getContext_dat_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Id",
+                            "type": "string"
+                        },
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Limit",
+                            "type": "integer"
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Offset",
+                            "type": "integer"
+                        },
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Dat Category",
+                            "type": "string"
+                        },
+                        "name": "dat_category",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Platform",
+                            "type": "string"
+                        },
+                        "name": "platform",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Purpose For",
+                            "type": "string"
+                        },
+                        "name": "purpose_for",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "title": "Response Getcontext Dat Get",
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/dat"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Add Item",
+                "description": "Add Item",
+                "operationId": "addContext_dat_put",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/dat"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Update Item",
+                "description": "Update Item",
+                "operationId": "updateContext_dat_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Id",
+                            "type": "string"
+                        },
+                        "name": "id",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/dat"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Delete Item",
+                "description": "Delete Item",
+                "operationId": "deleteContext_dat_delete",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Id",
+                            "type": "string"
+                        },
+                        "name": "id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/csv/import/dat": {
+            "post": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Import dat",
+                "description": "Import dat",
+                "operationId": "uploadCSV_csv_import_dat_post",
+                "requestBody": {
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_uploadCSV_csv_import_dat_post"
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/csv/export/dat": {
+            "get": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Export dat",
+                "description": "Export dat",
+                "operationId": "downloadCSV_csv_export_dat_get",
+                "parameters": [
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Id",
+                            "type": "string"
+                        },
+                        "name": "id",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Limit",
+                            "type": "integer"
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Offset",
+                            "type": "integer"
+                        },
+                        "name": "offset",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Dat Category",
+                            "type": "string"
+                        },
+                        "name": "dat_category",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Platform",
+                            "type": "string"
+                        },
+                        "name": "platform",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Purpose For",
+                            "type": "string"
+                        },
+                        "name": "purpose_for",
+                        "in": "query"
+                    },
+                    {
+                        "required": false,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/csv/clear/dat": {
+            "get": {
+                "tags": [
+                    "dat"
+                ],
+                "summary": "Clear Exports dat",
+                "description": "Clear Exports dat",
+                "operationId": "clearExports_csv_clear_dat_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/generic": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_generic_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/generic"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/yield": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_yield_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/yield"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fertilizer": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_fertilizer_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/fertilizer"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/water": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_water_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/water"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/pestcide": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_pestcide_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/pestcide"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/labor": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_labor_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/labor"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/fuel": {
+            "post": {
+                "tags": [
+                    "Add Data"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_fuel_post",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "title": "Request",
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/components/schemas/fuel"
+                                }
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/user_data": {
+            "get": {
+                "tags": [
+                    "User Data"
+                ],
+                "summary": "Retrieve Item",
+                "description": "Retrieve Item",
+                "operationId": "getContext_user_data_get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/totals/": {
+            "get": {
+                "tags": [
+                    "totals"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_totals__get",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/components/schemas/CultivationTypes"
+                        },
+                        "name": "myCultivationType",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/dat_tree": {
+            "get": {
+                "tags": [
+                    "dat_tree"
+                ],
+                "summary": "Retrieve DATs in a Tree like Object",
+                "description": "Retrieve DATs in a Tree like Object",
+                "operationId": "getContext_dat_tree_get",
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/investment": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_investment_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/yield": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_yield_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/fertilizer_reduction": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_fertilizer_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/water_reduction": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_water_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/pesticide_reduction": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_pesticide_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/labor_reduction": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_labor_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/arable/fuel_reduction": {
+            "post": {
+                "tags": [
+                    "arable_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_arable_fuel_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/investment": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_investment_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/yield": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_yield_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/fertilizer_reduction": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_fertilizer_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/water_reduction": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_water_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/pesticide_reduction": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_pesticide_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/labor_reduction": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_labor_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/fruits/fuel_reduction": {
+            "post": {
+                "tags": [
+                    "fruits_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_fruits_fuel_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/investment": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_investment_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/yield": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_yield_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/fertilizer_reduction": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_fertilizer_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/water_reduction": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_water_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/pesticide_reduction": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_pesticide_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/labor_reduction": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_labor_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vineyards/fuel_reduction": {
+            "post": {
+                "tags": [
+                    "vineyards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vineyards_fuel_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/investment": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_investment_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/yield": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_yield_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/fertilizer_reduction": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_fertilizer_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/water_reduction": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_water_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/pesticide_reduction": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_pesticide_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/labor_reduction": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_labor_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/vegetables/fuel_reduction": {
+            "post": {
+                "tags": [
+                    "vegetables_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_vegetables_fuel_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/investment": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_investment_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/yield": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_yield_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/fertilizer_reduction": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_fertilizer_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/water_reduction": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_water_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/pesticide_reduction": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_pesticide_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/labor_reduction": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_labor_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/results/orchards/fuel_reduction": {
+            "post": {
+                "tags": [
+                    "orchards_results"
+                ],
+                "summary": "Get Results",
+                "operationId": "getResults_results_orchards_fuel_reduction_post",
+                "parameters": [
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "Dat Name",
+                            "type": "string"
+                        },
+                        "name": "dat_name",
+                        "in": "query"
+                    },
+                    {
+                        "required": true,
+                        "schema": {
+                            "title": "User Id",
+                            "type": "integer"
+                        },
+                        "name": "user_id",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Body_uploadCSV_csv_import_dat_post": {
+                "title": "Body_uploadCSV_csv_import_dat_post",
+                "required": [
+                    "filedata"
+                ],
+                "type": "object",
+                "properties": {
+                    "filedata": {
+                        "title": "Filedata",
+                        "type": "string",
+                        "format": "binary"
+                    }
+                }
+            },
+            "CultivationTypes": {
+                "title": "CultivationTypes",
+                "enum": [
+                    "arable",
+                    "fruits",
+                    "vineyards",
+                    "vegetables",
+                    "orchards"
+                ],
+                "type": "string",
+                "description": "An enumeration."
+            },
+            "HTTPValidationError": {
+                "title": "HTTPValidationError",
+                "type": "object",
+                "properties": {
+                    "detail": {
+                        "title": "Detail",
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        }
+                    }
+                }
+            },
+            "ValidationError": {
+                "title": "ValidationError",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "type": "object",
+                "properties": {
+                    "loc": {
+                        "title": "Location",
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
+                    "msg": {
+                        "title": "Message",
+                        "type": "string"
+                    },
+                    "type": {
+                        "title": "Error Type",
+                        "type": "string"
+                    }
+                }
+            },
+            "dat": {
+                "title": "dat",
+                "type": "object",
+                "properties": {
+                    "dat_category": {
+                        "title": "Dat Category",
+                        "type": "string",
+                        "description": "DAT category"
+                    },
+                    "platform": {
+                        "title": "Platform",
+                        "type": "string",
+                        "description": "Platform "
+                    },
+                    "purpose_for": {
+                        "title": "Purpose For",
+                        "type": "string",
+                        "description": "Purpose (For:)"
+                    },
+                    "dat_name": {
+                        "title": "Dat Name",
+                        "type": "string",
+                        "description": "DAT name"
+                    },
+                    "dat_provider_name": {
+                        "title": "Dat Provider Name",
+                        "type": "string",
+                        "description": "DAT provider name"
+                    },
+                    "dat_provider_website": {
+                        "title": "Dat Provider Website",
+                        "type": "string",
+                        "description": "DAT provider website"
+                    },
+                    "platform_link": {
+                        "title": "Platform Link",
+                        "type": "string",
+                        "description": "Link from Platform "
+                    },
+                    "crop_type": {
+                        "title": "Crop Type",
+                        "type": "string",
+                        "description": "Crop type"
+                    },
+                    "cost_info": {
+                        "title": "Cost Info",
+                        "type": "string",
+                        "description": "COST INFO"
+                    }
+                }
+            },
+            "fertilizer": {
+                "title": "fertilizer",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_fertilizer_usage_kg_ha": {
+                        "title": "Current Fertilizer Usage Kg Ha",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "current_fertilizer_cost1_kg": {
+                        "title": "Current Fertilizer Cost1 Kg",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "fuel": {
+                "title": "fuel",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_fuel_costin_1_year": {
+                        "title": "Current Fuel Costin 1 Year",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "generic": {
+                "title": "generic",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "years_of_usage": {
+                        "title": "Years Of Usage",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "total_area_ha": {
+                        "title": "Total Area Ha",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "number_of_units_sensors_etc": {
+                        "title": "Number Of Units Sensors Etc",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "labor": {
+                "title": "labor",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_labor_costin_1_year": {
+                        "title": "Current Labor Costin 1 Year",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "pestcide": {
+                "title": "pestcide",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_pestcide_usage_kg_or_lt_ha": {
+                        "title": "Current Pestcide Usage Kg Or Lt Ha",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "current_pesticide_costkg_or_lt": {
+                        "title": "Current Pesticide Costkg Or Lt",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "water": {
+                "title": "water",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_water_usage_m3ha": {
+                        "title": "Current Water Usage M3Ha",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "current_water_costm3": {
+                        "title": "Current Water Costm3",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            },
+            "yield": {
+                "title": "yield",
+                "type": "object",
+                "properties": {
+                    "user_id": {
+                        "title": "User Id",
+                        "type": "integer",
+                        "default": 0
+                    },
+                    "current_yield_tonsha": {
+                        "title": "Current Yield Tonsha",
+                        "type": "number",
+                        "default": 0
+                    },
+                    "market_price1ton": {
+                        "title": "Market Price1Ton",
+                        "type": "number",
+                        "default": 0
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Administration",
+            "description": "Administrative actions."
+        }
+    ]
+}

@@ -1,0 +1,49 @@
+{
+  "investment" : [
+    { "name" : "total_cost_of_dat_purchase"                , "column" : "P"  , "function" : "=I3+(J3*Q3)+(L3*H3)" } ,
+    { "name" : "depreciation"                              , "column" : "M"  , "function" : "=0 if (P3<500) else (P3/H3)" } ,
+    { "name" : "maintenance_costs"                         , "column" : "N"  , "function" : "=P3*(4/100)" } 
+  ],
+  "yield" : [
+    { "name" : "yield_increase"                            , "column" : "R"  , "function" : "=R3" } , 
+    { "name" : "current_revenuein_1_year"                  , "column" : "U"  , "function" : "=S3*T3*Q3" } ,
+    { "name" : "increased_yield_tonsha"                    , "column" : "V"  , "function" : "=S3*(1+(R3/100))" } , 
+    { "name" : "price_of_increased_yieldha"                , "column" : "W"  , "function" : "=V3*T3" } , 
+    { "name" : "increased_revenuein_1_year"                , "column" : "X"  , "function" : "=(W3*Q3)-U3" } 
+  ],
+  "fertilizer_reduction" : [
+    { "name" : "fertilization_saving"                      , "column" : "Y"  , "function" : "=Y3" },
+    { "name" : "current_fertilization_costha"              , "column" : "AB" , "function" : "=AA3*Z3" } , 
+    { "name" : "reduced_fertilizer_usage_kgha"             , "column" : "AC" , "function" : "=Z3*(1-(Y3/100))" } , 
+    { "name" : "fertilizer_cost_savingsha"                 , "column" : "AD" , "function" : "=AB3-(AC3*AA3)" } , 
+    { "name" : "fertilization_cost_savingin_1_year"        , "column" : "AE" , "function" : "=AD3*Q3" } 
+  ],
+  "water_reduction" : [
+    { "name" : "water_saving"                              , "column" : "AF" , "function" : "=AF3" } , 
+    { "name" : "current_irrigation_costha"                 , "column" : "AI" , "function" : "=AH3*AG3" } , 
+    { "name" : "reduced_water_usage_m3ha"                  , "column" : "AJ" , "function" : "=AG3*(1-(AF3/100))" } , 
+    { "name" : "water_cost_savings_ha"                     , "column" : "AK" , "function" : "=AI3-(AJ3*AH3)" } , 
+    { "name" : "water_cost_savings_in_1_year"              , "column" : "AL" , "function" : "=AK3*Q3" } 
+  ],
+  "pesticide_reduction" : [
+    { "name" : "pesticide_saving"                          , "column" : "AM" , "function" : "=AM3" } , 
+    { "name" : "current_pesticide_costha"                  , "column" : "AP" , "function" : "=AO3*AN3" } , 
+    { "name" : "reduced_pesticide_usage_kg_or_lt_ha"       , "column" : "AQ" , "function" : "=AN3*(1-(AM3/100))" } , 
+    { "name" : "pesticide_cost_savingha"                   , "column" : "AR" , "function" : "=AP3-(AQ3*AO3)" } , 
+    { "name" : "pesticide_cost_savingsin_1_year"           , "column" : "AS" , "function" : "=AR3*Q3" } 
+  ],
+  "labor_reduction" : [ 
+    { "name" : "labor_saving"                              , "column" : "AT" , "function" : "=AT3" } , 
+    { "name" : "labor_cost_savings_in_1_year"              , "column" : "AV" , "function" : "=AU3-(AU3*(1-(AT3/100)))" } 
+  ],
+  "fuel_reduction" : [ 
+    { "name" : "fuel_saving"                               , "column" : "AW" , "function" : "=AW3" } , 
+    { "name" : "fuel_cost_savings_in_1_year"               , "column" : "AY" , "function" : "=AX3-(AX3*(1-(AW3/100)))" } 
+  ],
+  "totals" : [
+    { "name" : "annual_change_in_net_income"               , "column" : "AZ" , "function" : "=(AY3+AV3+AS3+AL3+AE3+X3)-M3-N3"  } ,
+    { "name" : "return_on_investment_roi"                  , "column" : "BA" , "function" : "=(AZ3/P3)*100 if (P3>0) else 0"  } ,
+    { "name" : "payback_period"                            , "column" : "BB" , "function" : "=(P3/AZ3)" } ,
+    { "name" : "is_the_dat_beneficial"                     , "column" : "BC" , "function" : "=1 if (0<BB3<6) else -1" }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "title": "QuantiFarm — Cost Benefit Calculator V1",
+  "description": "The 'Cost & Benefit Calculators' tool is designed to support farmers and agricultural advisors in assessing the financial impact and potential benefits of adopting various DATSs in crop and livestock farming systems. The tool features dedicated calculator modules for each type of system, tailored to reflect their specific needs.",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "upload_type": "software",
+  "creators": [
+    {
+      "name": "Manos, Thanasis",
+      "affiliation": "Neuropublic S.A."
+    }
+  ],
+  "keywords": [
+    "agricultural investment",
+    "digital agricultural technologies",
+    "DAT impact evaluation",
+    "environmental metrics",
+    "financial metrics"
+  ],
+  "grants": [
+    {
+      "id": "101059700"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://gitlab.com/QuantiFarm/cost-benefit-calculator-v1",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "This work has been funded by the European Union's Horizon Europe research and innovation programme under grant agreement No. 101059700. Views and opinions expressed are those of the author(s) only and do not necessarily reflect those of the European Union or the REA."
+}

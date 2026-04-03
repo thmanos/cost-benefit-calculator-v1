@@ -1,0 +1,332 @@
+{
+ "ineligible_groups": {
+  "arable": [ ],
+  "fruits": [],
+  "vineyards": [],
+  "vegetables": [],
+  "orchards": [],
+  "cattle": [
+   "livestock_calc_water_usage",
+   "livestock_calc_mortality_cost"
+  ],
+  "pigs": [
+   "livestock_calc_milk_yield",
+   "livestock_calc_water_usage",
+   "livestock_calc_profit_per_animal"
+  ],
+  "poultry": [
+   "livestock_calc_milk_yield",
+   "livestock_calc_energy_cost",
+   "livestock_calc_water_usage",
+   "livestock_calc_profit_per_animal",
+   "livestock_calc_feed_cost",
+   "livestock_calc_feed_waste",
+   "livestock_calc_antibiotics_cost",
+   "livestock_calc_mortality_cost"
+  ],
+  "small_ruminants": [
+   "livestock_calc_water_usage",
+   "livestock_calc_profit_per_animal",
+   "livestock_calc_antibiotics_cost",
+   "livestock_calc_mortality_cost",
+   "livestock_calc_profitability_increase"
+  ],
+  "TC1": [  ],
+  "TC2": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_pesticide",
+   "cropTC_calc_fuel"
+  ],
+  "TC3": [
+   "cropTC_calc_water",
+   "cropTC_calc_electricity"
+  ],
+  "TC4": [
+   "cropTC_calc_water",
+   "cropTC_calc_fuel",
+   "cropTC_calc_labor",
+   "cropTC_calc_electricity"
+  ],
+  "TC5": [
+   "cropTC_calc_electricity"
+  ],
+  "TC6": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_fuel",
+   "cropTC_calc_pesticide"
+  ],
+  "TC7": [
+   "cropTC_calc_fuel",
+   "cropTC_calc_labor",
+   "cropTC_calc_electricity",
+   "cropTC_calc_pesticide"
+  ],
+  "TC8": [
+   "cropTC_calc_fuel",
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_electricity",
+   "cropTC_calc_pesticide",
+   "cropTC_calc_water"
+  ],
+  "TC9": [
+   "cropTC_calc_water",
+   "cropTC_calc_electricity"
+  ],
+  "TC10": [
+   "cropTC_calc_water"
+  ],
+  "TC11": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_fuel"
+  ],
+  "TC12": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_water",
+   "cropTC_calc_pesticide"
+  ],
+  "TC13": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_electricity"
+  ],
+  "TC14": [],
+  "TC15": [],
+  "TC16": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_pesticide"
+  ],
+  "TC17": [
+   "cropTC_calc_yield",
+   "cropTC_calc_fuel",
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_electricity",
+   "cropTC_calc_water"
+  ],
+  "TC18": [
+   "cropTC_calc_electricity"
+  ],
+  "TC19": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_labor",
+   "cropTC_calc_pesticide"
+  ],
+  "TC20": [
+   "cropTC_calc_fertilizer",
+   "cropTC_calc_fuel",
+   "cropTC_calc_labor",
+   "cropTC_calc_electricity"
+  ],
+  "TC21": [],
+  "TC22": [
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_milk_yield",
+   "livestockTC_calc_labor_cost",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_fuel_cost",
+   "livestockTC_calc_antibiotics_cost",
+   "livestockTC_calc_mortality_cost"
+  ],
+  "TC23": [
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_milk_yield",
+   "livestockTC_calc_antibiotics_cost"
+  ],
+  "TC24": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_milk_yield",
+   "livestockTC_calc_labor_cost",
+   "livestockTC_calc_electricity_cost",
+   "livestockTC_calc_feed_cost"
+  ],
+  "TC25": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_water_usage",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_antibiotics_cost",
+   "livestockTC_calc_mortality_cost"
+  ],
+  "TC26": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_water_usage",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_fuel_cost",
+   "livestockTC_calc_mortality_cost"
+  ],
+  "TC27": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_labor_cost"
+  ],
+  "TC28": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_fuel_cost",
+   "livestockTC_calc_mortality_cost"
+  ],
+  "TC29": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_oyster",
+   "livestockTC_calc_milk_yield",
+   "livestockTC_calc_electricity_cost",
+   "livestockTC_calc_water_usage",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_fuel_cost",
+   "livestockTC_calc_mortality_cost"
+  ],
+  "TC30": [
+   "livestockTC_calc_meat",
+   "livestockTC_calc_honey",
+   "livestockTC_calc_milk_yield",
+   "livestockTC_calc_labor_cost",
+   "livestockTC_calc_electricity_cost",
+   "livestockTC_calc_water_usage",
+   "livestockTC_calc_feed_cost",
+   "livestockTC_calc_antibiotics_cost"
+  ]
+ },
+ "form_fields": {
+  "crop_calc_investment": [
+   "crop_years_of_usage",
+   "crop_total_area_ha",
+   "crop_number_of_units_sensors_etc"
+  ],
+  "crop_calc_yield": [
+   "crop_current_yield_tonsha",
+   "crop_market_price1ton"
+  ],
+  "crop_calc_fertilizer": [
+   "crop_current_fertilizer_usage_kg_ha",
+   "crop_current_fertilizer_cost1_kg"
+  ],
+  "crop_calc_water": [
+   "crop_current_water_usage_m3ha",
+   "crop_current_water_costm3"
+  ],
+  "crop_calc_pesticide": [
+   "crop_current_pestcide_usage_kg_or_lt_ha",
+   "crop_current_pesticide_costkg_or_lt"
+  ],
+  "crop_calc_labor": [
+   "crop_current_labor_costin_1_year"
+  ],
+  "crop_calc_fuel": [
+   "crop_current_fuel_costin_1_year"
+  ],
+  "livestock_calc_investment": [
+   "livestock_number_of_animals",
+   "livestock_years_of_usage",
+   "livestock_number_of_units_sensors_etc"
+  ],
+  "livestock_calc_milk_yield": [
+   "livestock_average_milk_price_per_literliter",
+   "livestock_average_liters_of_milk_produced_per_cow_per_day_l"
+  ],
+  "livestock_calc_labor_cost": [
+   "livestock_current_labor_costin_1_year"
+  ],
+  "livestock_calc_energy_cost": [
+   "livestock_current_energy_consumptionin_kwh",
+   "livestock_cost_of_energy_per_kwh"
+  ],
+  "livestock_calc_water_usage": [
+   "livestock_current_water_costin_1_year"
+  ],
+  "livestock_calc_profit_per_animal": [],
+  "livestock_calc_feed_cost": [
+   "livestock_current_feed_costin_1_year"
+  ],
+  "livestock_calc_feed_waste": [
+   "livestock_current_feed_waste_costin_1_year"
+  ],
+  "livestock_calc_antibiotics_cost": [
+   "livestock_current_antibiotics_costin_1_year"
+  ],
+  "livestock_calc_mortality_cost": [
+   "livestock_current_mortality_costin_1_year"
+  ],
+  "livestock_calc_profitability_increase": [
+   "livestock_current_profitabilityin_1_year"
+  ],
+  "cropTC_calc_investment": [
+   "cropTC_years_of_usage",
+   "cropTC_total_area_ha"
+  ],
+  "cropTC_calc_yield": [
+   "cropTC_current_yield_tonsha",
+   "cropTC_market_priceoneton"
+  ],
+  "cropTC_calc_fertilizer": [
+   "cropTC_current_fertilizer_usage_kg_ha",
+   "cropTC_current_fertilizer_cost_one_kg"
+  ],
+  "cropTC_calc_water": [
+   "cropTC_current_water_usage_m3ha",
+   "cropTC_current_water_costm3"
+  ],
+  "cropTC_calc_pesticide": [
+   "cropTC_current_pestcide_usage_kg_or_lt_ha",
+   "cropTC_current_pesticide_costkg_or_lt"
+  ],
+  "cropTC_calc_labor": [
+   "cropTC_current_labor_costin_one_year"
+  ],
+  "cropTC_calc_fuel": [
+   "cropTC_current_fuel_costin_one_year"
+  ],
+  "cropTC_calc_electricity": [
+   "cropTC_current_electricity_costin_one_year"
+  ],
+  "livestockTC_calc_investment": [
+   "livestockTC_number_of_animals",
+   "livestockTC_years_of_usage"
+  ],
+  "livestockTC_calc_meat": [
+   "livestockTC_average_meat_price_euro_per_kg",
+   "livestockTC_average_meat_produced_per_year_kg"
+  ],
+  "livestockTC_calc_oyster": [
+   "livestockTC_average_oyster_price_euro_per_kg",
+   "livestockTC_average_oysters_produced_per_year_kg"
+  ],
+  "livestockTC_calc_honey": [
+   "livestockTC_average_honey_price_euro_per_kg",
+   "livestockTC_average_honey_produced_per_year_kg"
+  ],
+  "livestockTC_calc_milk_yield": [
+   "livestockTC_average_milk_price_per_liter_euro_per_liter",
+   "livestockTC_average_liters_of_milk_produced_per_animal_per_day_with_dat_s_l"
+  ],
+  "livestockTC_calc_labor_cost": [
+   "livestockTC_current_labor_cost_without_dats_usage_euro_in_one_year"
+  ],
+  "livestockTC_calc_electricity_cost": [
+   "livestockTC_current_electricity_consumption_without_dats_usage_in_kwh",
+   "livestockTC_cost_of_electricity_per_kwh_euro"
+  ],
+  "livestockTC_calc_water_usage": [
+   "livestockTC_current_water_cost_euro_in_one_year"
+  ],
+  "livestockTC_calc_feed_cost": [
+   "livestockTC_current_feed_cost_without_dats_usage_euro_in_one_year"
+  ],
+  "livestockTC_calc_fuel_cost": [
+   "livestockTC_current_fuel_cost_without_dats_usage_euro_in_one_year"
+  ],
+  "livestockTC_calc_antibiotics_cost": [
+   "livestockTC_current_drug_cost_without_dats_usage_euro_in_one_year"
+  ],
+  "livestockTC_calc_mortality_cost": [
+   "livestockTC_current_mortality_cost_without_dats_usage_euro_in_one_year"
+  ]
+ }
+}

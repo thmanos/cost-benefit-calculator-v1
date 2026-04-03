@@ -1,0 +1,49 @@
+This Tool has 6 models all of which have their own Inputs and Outputs and can be executed individually.
+There is one Model for each one of the following : 
+- yield
+- fertilizer
+- water 
+- pesticide
+- labor
+- fuel
+
+Generally , the User selects the Type of Cultivation , the DAT and the Model he is interested in , provides the Inputs that the model requires and receives the Output.
+To select the DAT , the user needs to follow a Tree like selection : 
+1) Select "Type of Cultivation".
+2) Select "DAT Category" of the specific "Type of Cultivation".
+3) Select "Purpose For" of the specific "DAT Category".
+4) Select "DAT Name" of the specific "Purpose For".
+5) Select the Model.
+6) Fill in the Input Data required from the specific Model.
+7) Execute the Model and receive the results.
+
+Type of Cultivations (Hard Coded):
+- arable
+- fruits
+- vineyards
+- vegetables
+- orchards
+
+DAT Categorys (Hard Coded):
+- Farm Management Information Systems (FMIS) and applications (inc. Decision Support Systems (DSS). Quality Management Systems (QMS))
+- Guidance  Controlled Traffic Farming (CTF) technologies
+- Reacting or Variable Rate Technologies (VRT)
+- Recording or Mapping technologies (inc. monitoring systems. real-time location systems (RTLS))
+- Robotic Systems or Smart Machines (inc. Artificial Intelligence (AI))
+
+DAT Purpose For (From API):
+1) Query the following endpoint with the "dat_category" provided by the user : http://localhost:8687/dat?dat_category=XXXX
+2) Iterate through the Results and make a List of the available "DAT Purpose".
+3) Provide this list to the user to select a "DAT Purpose"
+
+DAT Name (From API):
+1) Now that you have both "dat_category" and "purpose_for" you can call the following EndPoint and retrieve the DATs : http://localhost:8687/dat?dat_category=XXXX&purpose_for=
+
+Models (Hard Coded):
+- yield
+- fertilizer
+- water 
+- pesticide
+- labor
+- fuel
+

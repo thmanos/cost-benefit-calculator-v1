@@ -1,0 +1,30 @@
+version: '1.0'
+
+services:
+    db:
+        container_name: quantifarm-cost-benefit-calculator-v1-tool-postgresql
+        image: postgresql-amanos
+        build: './build/postgresql'
+        restart: always
+        environment:
+            POSTGRES_PASSWORD: mysecretpassword
+        volumes:
+            - ../databases/cost-benefit-calculator-v1-tool:/var/lib/postgresql/data
+            # - cost-benefit-calculator-v1-tool:/var/lib/postgresql/data
+        ports:
+            - 5558:5432
+    api:
+        container_name: quantifarm-cost-benefit-calculator-v1-tool-api
+        image: fastapi-amanos
+        build: './build/fastapi'
+        restart: always
+        depends_on:
+            db: 
+                condition: service_started
+        volumes:
+            - ./volume/fastapi-app/app:/app
+        ports:
+            - "8688:8686"
+volumes:
+  cost-benefit-calculator-v1-tool:
+    external: false
