@@ -12,9 +12,7 @@ abstract: >
     By selecting a DATS and providing basic inputs (e.g., number of units, usage years, area, yield, and costs), 
     users receive key economic outputs such as operational savings (e.g. labour, fuel), potential revenue increases, Return on Investment, and Net Benefit. 
     This aids end-users in gaining a realistic understanding of their potential investment in a DATS.
-license:
-  - Apache-2.0
-  - CC-BY-4.0
+license: "Apache-2.0"
 repository-code: "https://gitlab.com/QuantiFarm/cost-benefit-calculator-v1"
 authors:
   - family-names: Manos
